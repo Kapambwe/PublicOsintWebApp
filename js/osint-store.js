@@ -73,10 +73,10 @@ window.osintStore = {
         printWindow.document.close();
     },
     getPreferredTheme: function () {
-        return window.localStorage.getItem("osint.theme.v1") || "dark";
+        return window.localStorage.getItem("osint.theme.v1") || "light";
     },
     setPreferredTheme: function (theme) {
-        const targetTheme = (theme === "light" || theme === "dark") ? theme : "dark";
+        const targetTheme = (theme === "light" || theme === "dark") ? theme : "light";
         window.localStorage.setItem("osint.theme.v1", targetTheme);
         document.documentElement.setAttribute("data-theme", targetTheme);
         document.body.setAttribute("data-theme", targetTheme);
@@ -91,7 +91,7 @@ window.osintStore = {
 
 // Initialize theme on load
 (function () {
-    const savedTheme = window.localStorage.getItem("osint.theme.v1") || "dark";
+    const savedTheme = window.localStorage.getItem("osint.theme.v1") || "light";
     document.documentElement.setAttribute("data-theme", savedTheme);
     document.body.setAttribute("data-theme", savedTheme);
 })();
