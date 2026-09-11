@@ -24,6 +24,16 @@
     <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
     <script src="js/osint-store.js"></script>
     <script src="_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js" type="module"></script>
+    <script>
+        // If redirected from 404.html on GitHub Pages, restore deep-link path
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const path = params.get('path');
+            if (path) {
+                window.history.replaceState(null, '', '/PublicOsintWebApp' + decodeURIComponent(path));
+            }
+        })();
+    </script>
 </body>
 
 </html>

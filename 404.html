@@ -1,29 +1,19 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AFRI-INTELLIGENCE | African Open Source Intelligence Portal</title>
-    <base href="/PublicOsintWebApp/" />
-    <link href="_content/Microsoft.FluentUI.AspNetCore.Components/css/reboot.css" rel="stylesheet" />
-    <link href="css/app.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <HeadOutlet />
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        // Redirect all 404 routes to index.html and preserve path/query for Blazor WASM routing on GitHub Pages
+        var repoName = '/PublicOsintWebApp';
+        var redirectTo = repoName + '/index.html' + location.search + location.hash;
+        var path = location.pathname.startsWith(repoName) ? location.pathname.replace(repoName, '') : location.pathname;
+        if (path && path !== '/index.html' && path !== '/') {
+            redirectTo += '?path=' + encodeURIComponent(path);
+        }
+        window.location.replace(redirectTo);
+    </script>
 </head>
-
-<body style="margin: 0; background-color: #0b0f19; color: #e2e8f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <div id="app">
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-            <div style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin-bottom: 1rem;">AFRI-INTELLIGENCE</div>
-            <div style="color: #94a3b8;">Loading Africa's Open Source Intelligence Portal...</div>
-        </div>
-    </div>
-
-    <script src="_framework/blazor.webassembly.w3qd1tpl0e.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
-    <script src="js/osint-store.js"></script>
-    <script src="_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lib.module.js" type="module"></script>
+<body>
 </body>
-
 </html>
