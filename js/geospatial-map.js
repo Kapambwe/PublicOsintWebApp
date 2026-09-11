@@ -380,11 +380,25 @@ class GeospatialMap {
             window.L.control.scale({ position: "bottomleft", metric: true, imperial: false }).addTo(this.map);
         }
 
-        window.L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+        const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+        const tileUrl = currentTheme === "light"
+            ? "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+            : "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+
+        this.tileLayer = window.L.tileLayer(tileUrl, {
             attribution: "© OpenStreetMap contributors © CARTO",
             maxZoom: 19,
             minZoom: 2
         }).addTo(this.map);
+
+        window.onOsintThemeChanged = (newTheme) => {
+            if (this.tileLayer && this.map) {
+                const nextUrl = newTheme === "light"
+                    ? "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+                    : "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+                this.tileLayer.setUrl(nextUrl);
+            }
+        };
 
         if (this.options.useClustering !== false && typeof window.L.markerClusterGroup === "function") {
             this.markerLayer = window.L.markerClusterGroup({

@@ -1,4 +1,4 @@
-:root {
+:root, [data-theme="dark"] {
     --bg-dark: #0f172a;
     --bg-deep: #1e293b;
     --bg-panel: #1e293b;
@@ -11,62 +11,82 @@
     --accent-rose: #f43f5e;
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
+    --border-subtle: #334155;
+    --hero-bg: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    --body-bg: radial-gradient(circle at top, rgba(51, 65, 85, 0.5), transparent 40%), linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+
+[data-theme="light"] {
+    --bg-dark: #f8fafc;
+    --bg-deep: #ffffff;
+    --bg-panel: #ffffff;
+    --bg-panel-strong: #e2e8f0;
+    --card-bg: #ffffff;
+    --accent-blue: #0284c7;
+    --accent-cyan: #0891b2;
+    --accent-indigo: #4f46e5;
+    --accent-violet: #9333ea;
+    --accent-rose: #e11d48;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border-subtle: #e2e8f0;
+    --hero-bg: linear-gradient(135deg, #e0f2fe 0%, #f1f5f9 50%, #e0e7ff 100%);
+    --body-bg: radial-gradient(circle at top, rgba(226, 232, 240, 0.6), transparent 40%), linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #f8fafc 100%);
 }
 
 body {
-    background:
-        radial-gradient(circle at top, rgba(51, 65, 85, 0.5), transparent 40%),
-        linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    background: var(--body-bg);
     color: var(--text-primary);
     scroll-behavior: smooth;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-/* Fix browser native dropdown option visibility (prevents white text on white background) */
+/* Fix browser native dropdown option visibility for light/dark themes */
 select, option {
-    background-color: #1e293b !important;
-    color: #f8fafc !important;
+    background-color: var(--bg-panel) !important;
+    color: var(--text-primary) !important;
 }
 
 select option {
-    background-color: #0f172a !important;
-    color: #f8fafc !important;
+    background-color: var(--bg-dark) !important;
+    color: var(--text-primary) !important;
     padding: 8px 12px;
 }
 
 select option:hover,
 select option:focus,
 select option:checked {
-    background-color: #0284c7 !important;
+    background-color: var(--accent-blue) !important;
     color: #ffffff !important;
 }
 
 /* Fix input contrast & placeholders */
 input, textarea {
-    background-color: #1e293b;
-    color: #f8fafc;
+    background-color: var(--bg-panel);
+    color: var(--text-primary);
 }
 
 input::placeholder, textarea::placeholder {
-    color: #94a3b8 !important;
-    opacity: 1;
+    color: var(--text-secondary) !important;
+    opacity: 0.8;
 }
 
-/* Microsoft Fluent UI web component dark theme overrides */
+/* Microsoft Fluent UI web component theme overrides */
 fluent-select, fluent-text-field, fluent-combobox, fluent-number-field, fluent-text-area {
-    --neutral-fill-input-rest: #1e293b;
-    --neutral-fill-layer-rest: #1e293b;
-    --neutral-foreground-rest: #f8fafc;
-    --accent-fill-rest: #0284c7;
-    color: #f8fafc !important;
+    --neutral-fill-input-rest: var(--bg-panel);
+    --neutral-fill-layer-rest: var(--bg-panel);
+    --neutral-foreground-rest: var(--text-primary);
+    --accent-fill-rest: var(--accent-blue);
+    color: var(--text-primary) !important;
 }
 
 fluent-option, fluent-menu-item {
-    background-color: #1e293b !important;
-    color: #f8fafc !important;
+    background-color: var(--bg-panel) !important;
+    color: var(--text-primary) !important;
 }
 
 fluent-option:hover, fluent-menu-item:hover {
-    background-color: #0284c7 !important;
+    background-color: var(--accent-blue) !important;
     color: #ffffff !important;
 }
 

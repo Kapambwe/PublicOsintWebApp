@@ -71,8 +71,30 @@ window.osintStore = {
             </html>
         `);
         printWindow.document.close();
+    },
+    getPreferredTheme: function () {
+        return window.localStorage.getItem("osint.theme.v1") || "dark";
+    },
+    setPreferredTheme: function (theme) {
+        const targetTheme = (theme === "light" || theme === "dark") ? theme : "dark";
+        window.localStorage.setItem("osint.theme.v1", targetTheme);
+        document.documentElement.setAttribute("data-theme", targetTheme);
+        document.body.setAttribute("data-theme", targetTheme);
+        
+        // Notify leaflet maps of tile layer swap if active
+        if (window.onOsintThemeChanged) {
+            window.onOsintThemeChanged(targetTheme);
+        }
+        return targetTheme;
     }
 };
+
+// Initialize theme on load
+(function () {
+    const savedTheme = window.localStorage.getItem("osint.theme.v1") || "dark";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+    document.body.setAttribute("data-theme", savedTheme);
+})();
 
 // Global keyboard shortcut listener for / and Ctrl+K keys
 document.addEventListener("keydown", function (event) {
