@@ -288,11 +288,10 @@ fluent-option:hover, fluent-menu-item:hover {
     gap: 0.75rem;
     margin: 1rem 0 1.1rem;
     padding: 0.95rem 1rem;
-    border: 1px solid rgba(56, 189, 248, 0.14);
-    border-radius: 16px;
-    background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.05), transparent 28%),
-        linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(11, 18, 32, 0.96));
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .results-toolbar-primary {
@@ -316,7 +315,7 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .results-view-note {
-    color: #94a3b8;
+    color: var(--text-secondary);
     font-size: 0.84rem;
     line-height: 1.5;
     max-width: 56rem;
@@ -325,11 +324,10 @@ fluent-option:hover, fluent-menu-item:hover {
 .results-filter-panel {
     margin-bottom: 0.9rem;
     padding: 0.8rem;
-    border: 1px solid rgba(56, 189, 248, 0.14);
-    border-radius: 16px;
-    background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.06), transparent 30%),
-        linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(11, 18, 32, 0.98));
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .results-filter-row {
@@ -354,7 +352,7 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .results-filter-label {
-    color: #7dd3fc;
+    color: var(--accent-blue);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -370,7 +368,7 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .results-filter-note {
-    color: #94a3b8;
+    color: var(--text-secondary);
     font-size: 0.8rem;
     line-height: 1.4;
     min-height: 2.1rem;
@@ -392,7 +390,7 @@ fluent-option:hover, fluent-menu-item:hover {
     padding: 0;
     cursor: pointer;
     font-weight: 800;
-    color: #7dd3fc;
+    color: var(--accent-blue);
 }
 
 .results-jurisdiction-group {
@@ -400,9 +398,9 @@ fluent-option:hover, fluent-menu-item:hover {
     gap: 0.55rem;
     margin-bottom: 0.9rem;
     padding: 0.8rem;
-    border: 1px solid rgba(31, 41, 55, 0.85);
-    border-radius: 16px;
-    background: rgba(8, 17, 31, 0.55);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--card-bg);
 }
 
 .results-jurisdiction-header {
@@ -435,10 +433,10 @@ fluent-option:hover, fluent-menu-item:hover {
 
 .results-table-wrap {
     overflow-x: auto;
-    border: 1px solid #1f2937;
-    border-radius: 16px;
-    background: rgba(11, 18, 32, 0.96);
-    box-shadow: 0 24px 40px -32px rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .osint-results-table {
@@ -450,40 +448,40 @@ fluent-option:hover, fluent-menu-item:hover {
 .osint-results-table th,
 .osint-results-table td {
     padding: 0.75rem 0.85rem;
-    border-bottom: 1px solid rgba(31, 41, 55, 0.85);
+    border-bottom: 1px solid var(--border-subtle);
     vertical-align: top;
     text-align: left;
 }
 
 .osint-results-table th {
-    color: #7dd3fc;
+    color: var(--text-secondary);
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.09em;
-    background: rgba(15, 23, 42, 0.95);
+    background: var(--bg-dark);
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
 .osint-results-table tr:hover td {
-    background: rgba(15, 23, 42, 0.85);
+    background: rgba(2, 132, 199, 0.04);
 }
 
 .results-table-link {
-    color: #f8fafc;
+    color: var(--text-primary);
     font-weight: 700;
 }
 
 .results-table-subtext {
-    color: #94a3b8;
+    color: var(--text-secondary);
     font-size: 0.76rem;
     line-height: 1.35;
     margin-top: 0.15rem;
 }
 
 .results-table-risk {
-    color: #7dd3fc;
+    color: var(--accent-blue);
     font-weight: 700;
 }
 
@@ -494,17 +492,18 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .osint-card {
-    background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(15, 23, 42, 0.96));
-    border: 1px solid #1e293b;
-    border-radius: 18px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
     padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .osint-card:hover {
-    border-color: #38bdf8;
+    border-color: var(--accent-blue);
     transform: translateY(-2px);
-    box-shadow: 0 24px 40px -28px rgba(56, 189, 248, 0.45);
+    box-shadow: 0 8px 16px -4px rgba(2, 132, 199, 0.12);
 }
 
 .entity-card {
