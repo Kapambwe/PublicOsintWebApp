@@ -202,11 +202,18 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .hero-chip {
-    background: #0f172a;
-    color: #cbd5e1;
-    border-color: #243041;
+    background: #ffffff !important;
+    color: #334155 !important;
+    border: 1px solid #cbd5e1 !important;
     height: 34px;
     padding-inline: 0.85rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.hero-chip:hover {
+    background: #f8fafc !important;
+    border-color: #0284c7 !important;
+    color: #0284c7 !important;
 }
 
 .page-shell {
@@ -2419,7 +2426,7 @@ fluent-option:hover, fluent-menu-item:hover {
 
 /* Batch Actions & Table Hover Sync Styling */
 .batch-actions-bar {
-    background: linear-gradient(135deg, #1e293b, #0f172a);
+    background: #ffffff;
     border: 1px solid #0284c7;
     border-radius: 12px;
     padding: 0.75rem 1.25rem;
@@ -2428,11 +2435,11 @@ fluent-option:hover, fluent-menu-item:hover {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    box-shadow: 0 8px 24px -8px rgba(2, 132, 199, 0.4);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.15);
 }
 
 .batch-actions-info {
-    color: #f8fafc;
+    color: #0f172a;
     font-size: 0.9rem;
 }
 
@@ -2463,8 +2470,8 @@ fluent-option:hover, fluent-menu-item:hover {
 .inspector-tabs-nav {
     display: flex;
     gap: 0.25rem;
-    background: #0f172a;
-    border: 1px solid #334155;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
     border-radius: 10px;
     padding: 0.25rem;
     margin-bottom: 1rem;
