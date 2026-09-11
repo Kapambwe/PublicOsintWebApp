@@ -844,13 +844,21 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .graph-export {
-    background: #0b1220;
-    color: #cbd5e1;
-    border: 1px solid #334155;
+    background: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
     border-radius: 999px;
     padding: 0.55rem 0.9rem;
     font-size: 0.82rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.graph-export:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
 }
 
 .graph-layout {
@@ -2425,10 +2433,12 @@ fluent-option:hover, fluent-menu-item:hover {
     flex-wrap: wrap;
 }
 
-.graph-export--active {
+.graph-export--active,
+.graph-export.active {
     background: #0284c7 !important;
     color: #ffffff !important;
-    border-color: #38bdf8 !important;
+    border-color: #0284c7 !important;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
 }
 
 .row-hovered {
