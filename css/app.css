@@ -822,19 +822,28 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .graph-filter {
-    background: #0b1220;
-    color: #cbd5e1;
-    border: 1px solid #334155;
+    background: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
     border-radius: 999px;
     padding: 0.52rem 0.9rem;
     font-size: 0.82rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.graph-filter:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
 }
 
 .graph-filter.active {
-    background: linear-gradient(135deg, #0284c7, #818cf8);
-    border-color: transparent;
-    color: #fff;
+    background: #0284c7 !important;
+    border-color: #0284c7 !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
 }
 
 .graph-actions {
