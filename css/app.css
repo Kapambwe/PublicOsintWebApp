@@ -1,24 +1,73 @@
 :root {
-    --bg-dark: #090d16;
-    --bg-deep: #0b1220;
-    --bg-panel: #111827;
-    --bg-panel-strong: #0f172a;
-    --card-bg: #111827;
+    --bg-dark: #0f172a;
+    --bg-deep: #1e293b;
+    --bg-panel: #1e293b;
+    --bg-panel-strong: #334155;
+    --card-bg: #1e293b;
     --accent-blue: #0284c7;
     --accent-cyan: #06b6d4;
     --accent-indigo: #818cf8;
     --accent-violet: #c084fc;
     --accent-rose: #f43f5e;
     --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    --text-secondary: #cbd5e1;
 }
 
 body {
     background:
-        radial-gradient(circle at top, rgba(30, 41, 59, 0.65), transparent 35%),
-        linear-gradient(180deg, #070b12 0%, #090d16 45%, #070b12 100%);
+        radial-gradient(circle at top, rgba(51, 65, 85, 0.5), transparent 40%),
+        linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
     color: var(--text-primary);
     scroll-behavior: smooth;
+}
+
+/* Fix browser native dropdown option visibility (prevents white text on white background) */
+select, option {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+}
+
+select option {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+    padding: 8px 12px;
+}
+
+select option:hover,
+select option:focus,
+select option:checked {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+}
+
+/* Fix input contrast & placeholders */
+input, textarea {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #94a3b8 !important;
+    opacity: 1;
+}
+
+/* Microsoft Fluent UI web component dark theme overrides */
+fluent-select, fluent-text-field, fluent-combobox, fluent-number-field, fluent-text-area {
+    --neutral-fill-input-rest: #1e293b;
+    --neutral-fill-layer-rest: #1e293b;
+    --neutral-foreground-rest: #f8fafc;
+    --accent-fill-rest: #0284c7;
+    color: #f8fafc !important;
+}
+
+fluent-option, fluent-menu-item {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+}
+
+fluent-option:hover, fluent-menu-item:hover {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
 }
 
 .hero-banner {
@@ -82,6 +131,18 @@ body {
     font-size: 1rem;
     outline: none;
     min-width: 0;
+}
+
+.search-shortcut-badge {
+    background: #334155;
+    color: #38bdf8;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: monospace;
+    user-select: none;
 }
 
 .hero-search-select {
@@ -2094,6 +2155,9 @@ body {
 .badge-ownership { background: #2563eb; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
 .badge-sanctions { background: #ea580c; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
 .badge-procurement { background: #059669; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
+.badge-gangs { background: #be185d; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+.badge-drugs { background: #d97706; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+.badge-corruption { background: #b91c1c; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
 
 @media (max-width: 900px) {
     .hero-search {
@@ -2315,4 +2379,154 @@ body {
     .results-jurisdiction-badges {
         justify-content: flex-start;
     }
+}
+
+/* Batch Actions & Table Hover Sync Styling */
+.batch-actions-bar {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px solid #0284c7;
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    box-shadow: 0 8px 24px -8px rgba(2, 132, 199, 0.4);
+}
+
+.batch-actions-info {
+    color: #f8fafc;
+    font-size: 0.9rem;
+}
+
+.batch-actions-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.graph-export--active {
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    border-color: #38bdf8 !important;
+}
+
+.row-hovered {
+    background-color: rgba(2, 132, 199, 0.15) !important;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.row-selected {
+    background-color: rgba(129, 140, 248, 0.2) !important;
+}
+
+/* Inspector Tab Navigation */
+.inspector-tabs-nav {
+    display: flex;
+    gap: 0.25rem;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.inspector-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #cbd5e1;
+    padding: 0.5rem 0.75rem;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.inspector-tab-btn.active {
+    background: #0284c7;
+    color: #ffffff;
+}
+
+/* Command Palette Modal Styling */
+.cmd-palette-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10vh;
+    z-index: 9999;
+}
+
+.cmd-palette-modal {
+    width: 90%;
+    max-width: 600px;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.cmd-palette-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #334155;
+    background: #0f172a;
+}
+
+.cmd-palette-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #f8fafc;
+    font-size: 1.05rem;
+}
+
+.cmd-palette-body {
+    padding: 1rem 1.25rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cmd-palette-group-title {
+    color: #94a3b8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.cmd-palette-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #f8fafc;
+    font-size: 0.92rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s ease-in-out;
+}
+
+.cmd-palette-item:hover, .cmd-palette-item:focus {
+    background: #0f172a;
+    border-color: #0284c7;
+    color: #38bdf8;
 }
