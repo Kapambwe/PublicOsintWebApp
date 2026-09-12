@@ -249,10 +249,11 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .coverage-note {
-    color: #7dd3fc;
+    color: #0284c7;
     font-size: 0.9rem;
     margin: 0 0 2rem;
     text-align: center;
+    font-weight: 600;
 }
 
 .osint-section {
@@ -268,7 +269,7 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .section-kicker {
-    color: #7dd3fc;
+    color: #0284c7;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.12em;
