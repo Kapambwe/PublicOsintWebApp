@@ -1089,15 +1089,15 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .ownership-summary-banner {
-    background:
-        radial-gradient(circle at left, rgba(16, 185, 129, 0.12), transparent 35%),
-        linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(11, 18, 32, 0.95));
-    border: 1px solid rgba(125, 211, 252, 0.14);
-    border-radius: 16px;
-    padding: 0.9rem 1rem;
-    color: #dbeafe;
+    background: #f8fafc;
+    border: 1px solid #bae6fd;
+    border-left: 4px solid #0284c7;
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    color: #0f172a;
+    font-weight: 500;
     line-height: 1.6;
-    box-shadow: 0 18px 34px -28px rgba(2, 132, 199, 0.7);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .ownership-layout {
@@ -1522,21 +1522,23 @@ fluent-option:hover, fluent-menu-item:hover {
 
 .timeline-stat {
     min-width: 120px;
-    background: rgba(11, 18, 32, 0.95);
-    border: 1px solid #1f2937;
-    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
     padding: 0.75rem 0.9rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .timeline-stat-value {
     font-size: 1.35rem;
     font-weight: 800;
-    color: #7dd3fc;
+    color: #0284c7;
 }
 
 .timeline-stat-label {
-    color: #94a3b8;
+    color: #64748b;
     font-size: 0.78rem;
+    font-weight: 600;
     margin-top: 0.2rem;
 }
 
