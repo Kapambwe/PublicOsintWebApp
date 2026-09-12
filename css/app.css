@@ -1820,15 +1820,15 @@ fluent-option:hover, fluent-menu-item:hover {
 .geo-map-legend-card {
     display: grid;
     gap: 0.55rem;
-    background: rgba(11, 18, 32, 0.96);
-    border: 1px solid rgba(56, 189, 248, 0.14);
-    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
     padding: 0.9rem 1rem;
-    box-shadow: 0 18px 34px -28px rgba(2, 132, 199, 0.7);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .geo-map-legend-title {
-    color: #7dd3fc;
+    color: #0284c7;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1839,8 +1839,9 @@ fluent-option:hover, fluent-menu-item:hover {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
-    color: #cbd5e1;
+    color: #334155;
     font-size: 0.82rem;
+    font-weight: 600;
 }
 
 .geo-map-legend-list span {
@@ -1853,12 +1854,12 @@ fluent-option:hover, fluent-menu-item:hover {
     width: 0.75rem;
     height: 0.75rem;
     border-radius: 999px;
-    border: 2px solid #0b1220;
+    border: 2px solid #ffffff;
 }
 
-.geo-map-legend-entity { background: #38bdf8; }
-.geo-map-legend-source { background: #818cf8; }
-.geo-map-legend-connected { background: #f59e0b; }
+.geo-map-legend-entity { background: #0284c7; }
+.geo-map-legend-source { background: #4f46e5; }
+.geo-map-legend-connected { background: #d97706; }
 
 .geo-map-coverage-list {
     display: flex;
@@ -1868,42 +1869,41 @@ fluent-option:hover, fluent-menu-item:hover {
 
 .geo-map-stat {
     min-width: 120px;
-    background: rgba(11, 18, 32, 0.95);
-    border: 1px solid #1f2937;
-    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
     padding: 0.75rem 0.9rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .geo-map-container {
     position: relative;
     width: 100%;
     min-height: 460px;
-    border: 1px solid #1f2937;
-    border-radius: 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
     overflow: hidden;
-    background:
-        radial-gradient(circle at center, rgba(56, 189, 248, 0.08), transparent 34%),
-        #08111f;
+    background: #ffffff;
 }
 
 .geo-map-container .leaflet-container {
-    background: #08111f;
+    background: #f8fafc;
     font-family: inherit;
 }
 
 .geo-map-container .leaflet-control-attribution,
 .geo-map-container .leaflet-control-scale-line {
-    background: rgba(3, 7, 18, 0.8);
-    color: #cbd5e1;
-    border-color: rgba(148, 163, 184, 0.18);
+    background: rgba(255, 255, 255, 0.9);
+    color: #475569;
+    border-color: #cbd5e1;
 }
 
 .geo-map-container .leaflet-popup-content-wrapper,
 .geo-map-container .leaflet-popup-tip {
-    background: rgba(11, 18, 32, 0.98);
-    color: var(--text-primary);
-    border: 1px solid rgba(56, 189, 248, 0.14);
-    box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.85);
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .geo-map-container .leaflet-popup-content {
@@ -1923,11 +1923,9 @@ fluent-option:hover, fluent-menu-item:hover {
     width: 16px;
     height: 16px;
     border-radius: 999px;
-    background: var(--geo-marker-color, #38bdf8);
-    box-shadow:
-        0 0 0 6px color-mix(in srgb, var(--geo-marker-color, #38bdf8) 18%, transparent),
-        0 0 20px color-mix(in srgb, var(--geo-marker-color, #38bdf8) 45%, transparent);
-    border: 2px solid #f8fafc;
+    background: var(--geo-marker-color, #0284c7);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--geo-marker-color, #0284c7) 18%, transparent);
+    border: 2px solid #ffffff;
 }
 
 .geo-marker-count {
@@ -1938,9 +1936,9 @@ fluent-option:hover, fluent-menu-item:hover {
     height: 18px;
     padding: 0 0.25rem;
     border-radius: 999px;
-    background: #0f172a;
-    color: #e2e8f0;
-    border: 1px solid rgba(125, 211, 252, 0.45);
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
     font-size: 0.66rem;
     font-weight: 800;
     display: grid;
@@ -1952,7 +1950,7 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .geo-popup-kicker {
-    color: #7dd3fc;
+    color: #0284c7;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1961,7 +1959,7 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .geo-popup-title {
-    color: var(--text-primary);
+    color: #0f172a;
     font-size: 0.98rem;
     font-weight: 800;
     line-height: 1.3;
@@ -1969,13 +1967,13 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .geo-popup-meta {
-    color: #94a3b8;
+    color: #64748b;
     font-size: 0.78rem;
     margin-bottom: 0.45rem;
 }
 
 .geo-popup-summary {
-    color: #cbd5e1;
+    color: #334155;
     font-size: 0.85rem;
     line-height: 1.55;
 }
