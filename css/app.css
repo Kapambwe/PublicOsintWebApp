@@ -1247,9 +1247,14 @@ fluent-option:hover, fluent-menu-item:hover {
     gap: 0.7rem;
     align-items: start;
     padding: 0.75rem;
-    background: rgba(15, 23, 42, 0.92);
-    border: 1px solid #1f2937;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 14px;
+}
+
+[data-theme="dark"] .ownership-step {
+    background: rgba(15, 23, 42, 0.92);
+    border-color: #1f2937;
 }
 
 .ownership-step-marker {
@@ -1277,6 +1282,10 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .ownership-step-title span {
+    color: #0284c7;
+}
+
+[data-theme="dark"] .ownership-step-title span {
     color: #7dd3fc;
 }
 
@@ -1284,22 +1293,34 @@ fluent-option:hover, fluent-menu-item:hover {
     display: flex;
     gap: 0.4rem;
     flex-wrap: wrap;
-    color: #94a3b8;
+    color: #64748b;
     font-size: 0.74rem;
 }
 
 .ownership-step-meta span {
-    border: 1px solid #1f2937;
-    background: #111827;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #475569;
     border-radius: 999px;
     padding: 0.16rem 0.5rem;
 }
 
+[data-theme="dark"] .ownership-step-meta span {
+    border-color: #1f2937;
+    background: #111827;
+    color: #cbd5e1;
+}
+
 .ownership-step-context,
 .ownership-step-reference {
-    color: #94a3b8;
+    color: #475569;
     line-height: 1.55;
     font-size: 0.84rem;
+}
+
+[data-theme="dark"] .ownership-step-context,
+[data-theme="dark"] .ownership-step-reference {
+    color: #94a3b8;
 }
 
 .ownership-candidate-list,
