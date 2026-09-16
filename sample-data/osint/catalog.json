@@ -1,65 +1,71 @@
 {
   "Dashboard": {
-    "IndexedSourceDocuments": 4250,
-    "BeneficialOwnershipRecords": 24800,
-    "PepAndOfficialClaims": 1120,
-    "VerifiedCitationPointers": 38400,
-    "CoverageNote": "Verified multi-jurisdictional intelligence from PACRA, ZRA, EITI, High Court judgments, OFAC watchlists, FinCEN alerts, and international registries."
+    "IndexedSourceDocuments": 5820,
+    "BeneficialOwnershipRecords": 31200,
+    "PepAndOfficialClaims": 1450,
+    "VerifiedCitationPointers": 49100,
+    "CoverageNote": "Verified multi-jurisdictional intelligence from PACRA, ZRA, EITI, ZESCO audit bulletins, High Court judgments, OFAC watchlists, FinCEN alerts, and international registries."
   },
   "Categories": [
     {
       "Key": "pep",
       "Label": "PEP & Declared Assets",
-      "Count": 98,
+      "Count": 115,
       "AccentClass": "badge-pep"
     },
     {
       "Key": "beneficial-ownership",
       "Label": "Beneficial Ownership",
-      "Count": 310,
+      "Count": 380,
       "AccentClass": "badge-ownership"
     },
     {
       "Key": "procurement",
       "Label": "Procurement Fraud",
-      "Count": 145,
+      "Count": 195,
       "AccentClass": "badge-procurement"
     },
     {
       "Key": "customs",
       "Label": "Customs & Trade",
-      "Count": 210,
+      "Count": 240,
       "AccentClass": "badge-customs"
     },
     {
       "Key": "crypto",
       "Label": "Crypto Tracing",
-      "Count": 85,
+      "Count": 95,
       "AccentClass": "badge-crypto"
     },
     {
       "Key": "convicted",
       "Label": "Court Convictions",
-      "Count": 160,
+      "Count": 180,
       "AccentClass": "badge-convicted"
     },
     {
       "Key": "gangs",
       "Label": "Gangs & Cartels",
-      "Count": 72,
+      "Count": 85,
       "AccentClass": "badge-gangs"
     },
     {
       "Key": "drugs",
       "Label": "Drug Trafficking",
-      "Count": 64,
+      "Count": 75,
       "AccentClass": "badge-drugs"
     },
     {
       "Key": "banking",
       "Label": "Banking & Finance",
-      "Count": 115,
+      "Count": 140,
       "AccentClass": "badge-banking"
+    },
+    {
+      "Key": "zesco-energy",
+      "Label": "ZESCO & Energy Vendors",
+      "Count": 128,
+      "AccentClass": "badge-energy"
     }
   ],
   "SourceDocuments": [
@@ -150,9 +156,315 @@
       "ReferenceCode": "2022/HP/CR/0412",
       "Summary": "Criminal conviction sentencing former procurement director to 7 years imprisonment for corrupt practices and kickbacks.",
       "SourceUrl": "https://zambialii.org/judgments/criminal-division/2022/412"
+    },
+    {
+      "Id": "DOC-2023-ZESCO-AUD",
+      "Title": "ZESCO Power Utility Sub-Station & Grid Procurement Special Audit",
+      "Issuer": "Auditor General's Office & ZESCO Board of Inquiry",
+      "Jurisdiction": "Zambia",
+      "DocumentType": "Utility Special Audit",
+      "PublishedOn": "2023-10-15",
+      "ReferenceCode": "ZESCO-AUD-2023-1102",
+      "Summary": "Special audit investigating $48M transformer supply over-invoicing and uncompleted high-voltage sub-station contracts.",
+      "SourceUrl": "https://www.zesco.co.zm/audits/2023-1102"
+    },
+    {
+      "Id": "DOC-2024-ENERGY-SOV",
+      "Title": "Ministry of Energy Sovereign Guarantee & IPP Solar Concession Review",
+      "Issuer": "Ministry of Energy & Cabinet Office",
+      "Jurisdiction": "Zambia",
+      "DocumentType": "Energy Gazette",
+      "PublishedOn": "2024-03-01",
+      "ReferenceCode": "ENERGY-GAZ-2024-004",
+      "Summary": "Cabinet review of sovereign guarantees issued to Independent Power Producers (IPPs) with non-disclosed PEP shareholding.",
+      "SourceUrl": "https://www.moe.gov.zm/reviews/2024-004"
     }
   ],
   "Entities": [
+    {
+      "Id": "ENT-ZESCO-001",
+      "Name": "Zambezi Hydro-Power Solutions Ltd",
+      "EntityType": "Company",
+      "Category": "ZESCO & Energy Vendors",
+      "Jurisdiction": "Zambia",
+      "PrimaryIdentifier": "PACRA-50019283",
+      "RiskLabel": "ZESCO Vendor Audit",
+      "RiskScore": 89.0,
+      "Summary": "Primary grid expansion and sub-station contractor for ZESCO. Investigated in Auditor General report for $28M in uncompleted sub-station deliverables.",
+      "Aliases": ["Zambezi Hydro", "ZHPS Power"],
+      "Tags": ["ZESCO Contractor", "Power Grid", "Sub-Station Procurement", "Over-Invoicing"],
+      "Claims": [
+        {
+          "Id": "CLM-ZESCO-001A",
+          "Title": "Uncompleted Sub-Station Payment Discrepancy",
+          "SourceType": "Utility Special Audit",
+          "SourceDocumentTitle": "ZESCO Power Utility Sub-Station & Grid Procurement Special Audit",
+          "Date": "2023-10-15",
+          "PageAndParagraph": "Page 12, Para 4",
+          "DirectQuote": "Advance payment of $28.4M disbursed for 330kV sub-station construction in Kafue Gorge without civil works milestone verification.",
+          "ReliabilityTier": "Tier 1 (Official Record)",
+          "VerificationStatus": "Verified & Corroborated",
+          "SourceUrl": "https://www.zesco.co.zm/audits/2023-1102#p12"
+        }
+      ],
+      "Relationships": [
+        {
+          "TargetEntityName": "Kennedy Chisala",
+          "RelationshipType": "Managing Director",
+          "Context": "Founder and executive director",
+          "SourceReference": "DOC-2023-ZESCO-AUD",
+          "PercentageShares": 60.0,
+          "ShareClass": "Ordinary",
+          "AcquisitionDate": "2019-02-10"
+        },
+        {
+          "TargetEntityName": "Eng. Mutale Musonda",
+          "RelationshipType": "Tender Evaluator",
+          "Context": "ZESCO procurement lead approving advance disbursements",
+          "SourceReference": "DOC-2023-ZESCO-AUD",
+          "PercentageShares": null,
+          "ShareClass": "",
+          "AcquisitionDate": "2020-05-18"
+        }
+      ]
+    },
+    {
+      "Id": "ENT-ZESCO-002",
+      "Name": "Kafue Power Engineering Corp",
+      "EntityType": "Company",
+      "Category": "ZESCO & Energy Vendors",
+      "Jurisdiction": "Zambia",
+      "PrimaryIdentifier": "PACRA-50028192",
+      "RiskLabel": "ZESCO Equipment Supplier",
+      "RiskScore": 86.0,
+      "Summary": "Heavy electrical equipment vendor supplying high-voltage step-down transformers to ZESCO. Flagged for 65% price markup over OEM manufacturer cost.",
+      "Aliases": ["Kafue Power", "KPEC Energy"],
+      "Tags": ["ZESCO Vendor", "Transformer Supplier", "Price Over-Invoicing"],
+      "Claims": [
+        {
+          "Id": "CLM-ZESCO-002A",
+          "Title": "Transformer Over-Invoicing Audit",
+          "SourceType": "Utility Special Audit",
+          "SourceDocumentTitle": "ZESCO Power Utility Sub-Station & Grid Procurement Special Audit",
+          "Date": "2023-10-15",
+          "PageAndParagraph": "Page 22, Para 2",
+          "DirectQuote": "Contract for 500MVA transformers billed at $4.2M per unit versus $2.5M direct manufacturer quotation.",
+          "ReliabilityTier": "Tier 1 (Official Record)",
+          "VerificationStatus": "Verified & Corroborated",
+          "SourceUrl": "https://www.zesco.co.zm/audits/2023-1102#p22"
+        }
+      ],
+      "Relationships": [
+        {
+          "TargetEntityName": "Dr. Patricia Bwalya",
+          "RelationshipType": "Beneficial Owner",
+          "Context": "Indirect ownership held via offshore proxy trust",
+          "SourceReference": "DOC-2024-ENERGY-SOV",
+          "PercentageShares": 40.0,
+          "ShareClass": "Class B",
+          "AcquisitionDate": "2020-08-14"
+        }
+      ]
+    },
+    {
+      "Id": "ENT-ZESCO-003",
+      "Name": "Luapula Solar Concessions Ltd",
+      "EntityType": "Company",
+      "Category": "ZESCO & Energy Vendors",
+      "Jurisdiction": "Zambia",
+      "PrimaryIdentifier": "PACRA-50039102",
+      "RiskLabel": "Sovereign Guarantee Risk",
+      "RiskScore": 91.0,
+      "Summary": "Independent Power Producer (IPP) awarded 120MW solar concession with mandatory ZESCO power purchase agreement (PPA) backed by $150M government guarantee.",
+      "Aliases": ["Luapula Solar", "LSC Energy"],
+      "Tags": ["IPP Solar", "ZESCO PPA", "Sovereign Guarantee", "PEP Involvement"],
+      "Claims": [
+        {
+          "Id": "CLM-ZESCO-003A",
+          "Title": "Sovereign Guarantee Conflict Inquiry",
+          "SourceType": "Energy Gazette",
+          "SourceDocumentTitle": "Ministry of Energy Sovereign Guarantee & IPP Solar Concession Review",
+          "Date": "2024-03-01",
+          "PageAndParagraph": "Page 8, Para 1",
+          "DirectQuote": "Sovereign guarantee executed without parliamentary approval for solar plant with non-disclosed senior ministry board member.",
+          "ReliabilityTier": "Tier 1 (Official Record)",
+          "VerificationStatus": "Verified & Corroborated",
+          "SourceUrl": "https://www.moe.gov.zm/reviews/2024-004#p8"
+        }
+      ],
+      "Relationships": [
+        {
+          "TargetEntityName": "Dr. Patricia Bwalya",
+          "RelationshipType": "Concession Beneficiary",
+          "Context": "Approved PPA sovereign guarantee while holding indirect equity",
+          "SourceReference": "DOC-2024-ENERGY-SOV",
+          "PercentageShares": 35.0,
+          "ShareClass": "Ordinary",
+          "AcquisitionDate": "2021-01-20"
+        }
+      ]
+    },
+    {
+      "Id": "ENT-ZESCO-004",
+      "Name": "Lusaka Digital Telecom Infrastructure Ltd",
+      "EntityType": "Company",
+      "Category": "ZESCO & Energy Vendors",
+      "Jurisdiction": "Zambia",
+      "PrimaryIdentifier": "PACRA-60019201",
+      "RiskLabel": "Government Telecom Vendor",
+      "RiskScore": 78.0,
+      "Summary": "Fiber optic infrastructure vendor leased ZESCO high-voltage optical ground wire (OPGW) network under non-competitive commercial terms.",
+      "Aliases": ["Lusaka Telecom", "LDT Infrastructure"],
+      "Tags": ["Government Telecom", "ZESCO OPGW Fiber", "Non-Competitive PPA"],
+      "Claims": [
+        {
+          "Id": "CLM-ZESCO-004A",
+          "Title": "Fiber Lease Lease-Back Discrepancy",
+          "SourceType": "Utility Special Audit",
+          "SourceDocumentTitle": "ZESCO Power Utility Sub-Station & Grid Procurement Special Audit",
+          "Date": "2023-10-15",
+          "PageAndParagraph": "Page 30, Para 5",
+          "DirectQuote": "20-year exclusive dark fiber lease awarded at 80% discount below regional market rates.",
+          "ReliabilityTier": "Tier 1 (Official Record)",
+          "VerificationStatus": "Verified & Corroborated",
+          "SourceUrl": "https://www.zesco.co.zm/audits/2023-1102#p30"
+        }
+      ],
+      "Relationships": [
+        {
+          "TargetEntityName": "Eng. Mutale Musonda",
+          "RelationshipType": "Technical Advisor",
+          "Context": "Advised ZESCO board on dark fiber commercial terms",
+          "SourceReference": "DOC-2023-ZESCO-AUD",
+          "PercentageShares": null,
+          "ShareClass": "",
+          "AcquisitionDate": "2019-09-01"
+        }
+      ]
+    },
+    {
+      "Id": "ENT-OFFICIAL-001",
+      "Name": "Eng. Mutale Musonda",
+      "EntityType": "Person",
+      "Category": "PEP",
+      "Jurisdiction": "Zambia",
+      "PrimaryIdentifier": "NRC-192830/11/1",
+      "RiskLabel": "ZESCO Procurement Director",
+      "RiskScore": 92.0,
+      "Summary": "Former Senior Procurement Director at ZESCO. Cited in Auditor General probe for approving unverified advance payments to sub-station vendors.",
+      "Aliases": ["Mutale Musonda", "Eng. M. Musonda"],
+      "Tags": ["ZESCO Official", "Procurement Oversight", "Utility Audit Target"],
+      "Claims": [
+        {
+          "Id": "CLM-OFFICIAL-001A",
+          "Title": "ZESCO Advance Payment Authorization",
+          "SourceType": "Utility Special Audit",
+          "SourceDocumentTitle": "ZESCO Power Utility Sub-Station & Grid Procurement Special Audit",
+          "Date": "2023-10-15",
+          "PageAndParagraph": "Page 14, Para 2",
+          "DirectQuote": "Director authorized 100% advance payment for 330kV transmission equipment prior to port arrival.",
+          "ReliabilityTier": "Tier 1 (Official Record)",
+          "VerificationStatus": "Verified & Corroborated",
+          "SourceUrl": "https://www.zesco.co.zm/audits/2023-1102#p14"
+        }
+      ],
+      "Relationships": [
+        {
+          "TargetEntityName": "Zambezi Hydro-Power Solutions Ltd",
+          "RelationshipType": "Approval Officer",
+          "Context": "Authorized advance payment releases",
+          "SourceReference": "DOC-2023-ZESCO-AUD",
+          "PercentageShares": null,
+          "ShareClass": "",
+          "AcquisitionDate": "2020-05-18"
+        }
+      ]
+    },
+    {
+      "Id": "ENT-OFFICIAL-002",
+      "Name": "Dr. Patricia Bwalya",
+      "EntityType": "Person",
+      "Category": "PEP",
+      "Jurisdiction": "Zambia",
+      "PrimaryIdentifier": "NRC-772910/11/1",
+      "RiskLabel": "Verified PEP",
+      "RiskScore": 94.0,
+      "Summary": "Permanent Secretary in the Ministry of Energy. Investigated for issuing sovereign guarantees to Independent Power Producers in which she held undisclosed proxy shares.",
+      "Aliases": ["Patricia Bwalya", "Dr. P. Bwalya"],
+      "Tags": ["PEP", "Permanent Secretary", "Ministry of Energy", "Sovereign Guarantees"],
+      "Claims": [
+        {
+          "Id": "CLM-OFFICIAL-002A",
+          "Title": "Sovereign Guarantee Execution Audit",
+          "SourceType": "Energy Gazette",
+          "SourceDocumentTitle": "Ministry of Energy Sovereign Guarantee & IPP Solar Concession Review",
+          "Date": "2024-03-01",
+          "PageAndParagraph": "Page 11, Para 3",
+          "DirectQuote": "Permanent Secretary executed $150M PPA guarantee without Treasury concurrence.",
+          "ReliabilityTier": "Tier 1 (Official Record)",
+          "VerificationStatus": "Verified & Corroborated",
+          "SourceUrl": "https://www.moe.gov.zm/reviews/2024-004#p11"
+        }
+      ],
+      "Relationships": [
+        {
+          "TargetEntityName": "Luapula Solar Concessions Ltd",
+          "RelationshipType": "Beneficial Owner",
+          "Context": "Indirect equity holder via proxy trust",
+          "SourceReference": "DOC-2024-ENERGY-SOV",
+          "PercentageShares": 35.0,
+          "ShareClass": "Ordinary",
+          "AcquisitionDate": "2021-01-20"
+        },
+        {
+          "TargetEntityName": "Kafue Power Engineering Corp",
+          "RelationshipType": "Shareholder",
+          "Context": "40% indirect shareholding",
+          "SourceReference": "DOC-2024-ENERGY-SOV",
+          "PercentageShares": 40.0,
+          "ShareClass": "Class B",
+          "AcquisitionDate": "2020-08-14"
+        }
+      ]
+    },
+    {
+      "Id": "ENT-EXEC-002",
+      "Name": "Kennedy Chisala",
+      "EntityType": "Person",
+      "Category": "ZESCO & Energy Vendors",
+      "Jurisdiction": "Zambia",
+      "PrimaryIdentifier": "NRC-552910/11/1",
+      "RiskLabel": "Government Contractor",
+      "RiskScore": 87.0,
+      "Summary": "Managing Director of Zambezi Hydro-Power Solutions Ltd. Key contractor for ZESCO grid expansion projects.",
+      "Aliases": ["K. Chisala", "Kennedy M. Chisala"],
+      "Tags": ["Government Contractor", "ZESCO Vendor", "Energy Infrastructure"],
+      "Claims": [
+        {
+          "Id": "CLM-EXEC-002A",
+          "Title": "Contract Milestone Discrepancy",
+          "SourceType": "Utility Special Audit",
+          "SourceDocumentTitle": "ZESCO Power Utility Sub-Station & Grid Procurement Special Audit",
+          "Date": "2023-10-15",
+          "PageAndParagraph": "Page 16, Para 1",
+          "DirectQuote": "Executive submitted milestone completion certificates for uninstalled transmission lines.",
+          "ReliabilityTier": "Tier 1 (Official Record)",
+          "VerificationStatus": "Verified & Corroborated",
+          "SourceUrl": "https://www.zesco.co.zm/audits/2023-1102#p16"
+        }
+      ],
+      "Relationships": [
+        {
+          "TargetEntityName": "Zambezi Hydro-Power Solutions Ltd",
+          "RelationshipType": "Chief Executive",
+          "Context": "60% majority owner",
+          "SourceReference": "DOC-2023-ZESCO-AUD",
+          "PercentageShares": 60.0,
+          "ShareClass": "Ordinary",
+          "AcquisitionDate": "2019-02-10"
+        }
+      ]
+    },
     {
       "Id": "ENT-PEP-001",
       "Name": "Mwamba Kabwe",
@@ -282,15 +594,6 @@
           "PercentageShares": 75.0,
           "ShareClass": "Class A",
           "AcquisitionDate": "2020-02-15"
-        },
-        {
-          "TargetEntityName": "Geneva Commodity Trade SA",
-          "RelationshipType": "Off-Take Buyer",
-          "Context": "Transfer pricing arrangement for raw concentrate sales",
-          "SourceReference": "DOC-2024-TP-SWISS",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2021-04-01"
         }
       ]
     },
@@ -314,7 +617,7 @@
           "SourceDocumentTitle": "Federal Tax Administration Transfer Pricing Audit Audit Findings - Luapula Cobalt",
           "Date": "2024-01-12",
           "PageAndParagraph": "Page 15, Para 4",
-          "DirectQuote": "Management service payments of $142M to Geneva entity lacked commercial substance and served solely to reduce Zambian tax liability.",
+          "DirectQuote": "Management service payments of $142M to Geneva entity lacked commercial substance and served solely to reduce tax liability.",
           "ReliabilityTier": "Tier 1 (Official Record)",
           "VerificationStatus": "Verified & Corroborated",
           "SourceUrl": "https://www.estv.admin.ch/audit/2024-881#p15"
@@ -329,15 +632,6 @@
           "PercentageShares": 100.0,
           "ShareClass": "Ordinary",
           "AcquisitionDate": "2017-09-15"
-        },
-        {
-          "TargetEntityName": "Robert Chen",
-          "RelationshipType": "Executive Director",
-          "Context": "Chief Executive Officer directing export transfer pricing agreements",
-          "SourceReference": "DOC-2024-TP-SWISS",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2018-01-10"
         }
       ]
     },
@@ -361,7 +655,7 @@
           "SourceDocumentTitle": "Federal Tax Administration Transfer Pricing Audit Audit Findings - Luapula Cobalt",
           "Date": "2024-01-12",
           "PageAndParagraph": "Page 22, Para 8",
-          "DirectQuote": "Re-invoicing of African mineral shipments through Geneva generated $142M in tax-untaxed surplus margin.",
+          "DirectQuote": "Re-invoicing of African mineral shipments through Geneva generated $142M in untaxed surplus margin.",
           "ReliabilityTier": "Tier 1 (Official Record)",
           "VerificationStatus": "Verified & Corroborated",
           "SourceUrl": "https://www.estv.admin.ch/audit/2024-881#p22"
@@ -376,176 +670,6 @@
           "PercentageShares": null,
           "ShareClass": "",
           "AcquisitionDate": "2016-03-20"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-EXEC-001",
-      "Name": "Robert Chen",
-      "EntityType": "Person",
-      "Category": "Beneficial Ownership",
-      "Jurisdiction": "Switzerland",
-      "PrimaryIdentifier": "PASSPORT-CH-9920194",
-      "RiskLabel": "Mining Executive",
-      "RiskScore": 86.0,
-      "Summary": "Mining executive and CEO of Luapula Cobalt Extractors Ltd. Target of transfer pricing audit into base metal export mispricing.",
-      "Aliases": ["Bob Chen", "R. Chen"],
-      "Tags": ["Mining Executive", "Transfer Pricing", "Cobalt Sector"],
-      "Claims": [
-        {
-          "Id": "CLM-EXEC-001A",
-          "Title": "Transfer Pricing Directorship Sign-Off",
-          "SourceType": "Transfer Pricing Audit",
-          "SourceDocumentTitle": "Federal Tax Administration Transfer Pricing Audit Audit Findings - Luapula Cobalt",
-          "Date": "2024-01-12",
-          "PageAndParagraph": "Page 5, Para 1",
-          "DirectQuote": "Executive authorized non-arm's length off-take pricing contracts with Swiss parent entity.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://www.estv.admin.ch/audit/2024-881#p5"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Luapula Cobalt Extractors Ltd",
-          "RelationshipType": "Chief Executive Officer",
-          "Context": "Executive management",
-          "SourceReference": "DOC-2024-TP-SWISS",
-          "PercentageShares": 10.0,
-          "ShareClass": "Executive Options",
-          "AcquisitionDate": "2018-01-10"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-BANK-001",
-      "Name": "Harrison Vance",
-      "EntityType": "Person",
-      "Category": "PEP",
-      "Jurisdiction": "Zambia",
-      "PrimaryIdentifier": "NRC-448102/11/1",
-      "RiskLabel": "Banking Executive",
-      "RiskScore": 87.0,
-      "Summary": "Managing Director of Commercial Bank of Lusaka. Under central bank probe for facilitating PEP wire transfers without mandatory STR filings.",
-      "Aliases": ["H. Vance", "Harrison P. Vance"],
-      "Tags": ["Banking Executive", "Money Laundering Risk", "PEP Facilitation"],
-      "Claims": [
-        {
-          "Id": "CLM-BANK-001A",
-          "Title": "Suspicious Transaction Reporting Failure",
-          "SourceType": "Audit Disclosure",
-          "SourceDocumentTitle": "Extractive Industries Transparency Initiative (EITI) Beneficial Ownership Disclosure",
-          "Date": "2023-11-20",
-          "PageAndParagraph": "Page 55, Para 3",
-          "DirectQuote": "Bank executive bypassed automated AML monitoring rules for high-value PEP wire transfers to BVI accounts.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://eiti.org/countries/zambia/reports/2023#p55"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Mwamba Kabwe",
-          "RelationshipType": "Financial Advisor",
-          "Context": "Managed private banking relationship and foreign exchange wires",
-          "SourceReference": "DOC-2023-EITI-ZM",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2019-11-01"
-        },
-        {
-          "TargetEntityName": "Vanguard Horizon Holdings Ltd",
-          "RelationshipType": "Correspondent Banker",
-          "Context": "Approved international wire clearances",
-          "SourceReference": "DOC-2023-EITI-ZM",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2020-01-15"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-BANK-002",
-      "Name": "Beatrice Njobvu",
-      "EntityType": "Person",
-      "Category": "PEP",
-      "Jurisdiction": "Zambia",
-      "PrimaryIdentifier": "TPIN-2009819201",
-      "RiskLabel": "Banking Executive",
-      "RiskScore": 81.0,
-      "Summary": "Chief Compliance Officer at Horizon International Bank. Cited for failure to enforce UBO screening guidelines on high-risk mining accounts.",
-      "Aliases": ["B. Njobvu", "Beatrice M. Njobvu"],
-      "Tags": ["Banking Executive", "AML Compliance", "UBO Screening Failure"],
-      "Claims": [
-        {
-          "Id": "CLM-BANK-002A",
-          "Title": "Compliance Override Audit Finding",
-          "SourceType": "Audit Disclosure",
-          "SourceDocumentTitle": "Extractive Industries Transparency Initiative (EITI) Beneficial Ownership Disclosure",
-          "Date": "2023-11-20",
-          "PageAndParagraph": "Page 58, Para 1",
-          "DirectQuote": "Override of system KYC flags permitted shell company accounts to operate without disclosed natural person beneficial owners.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://eiti.org/countries/zambia/reports/2023#p58"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Kafue Copper Resources Ltd",
-          "RelationshipType": "Compliance Officer",
-          "Context": "Oversaw commercial account compliance clearance",
-          "SourceReference": "DOC-2023-EITI-ZM",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2020-04-10"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-BANK-003",
-      "Name": "Victor Moreau",
-      "EntityType": "Person",
-      "Category": "Beneficial Ownership",
-      "Jurisdiction": "Switzerland",
-      "PrimaryIdentifier": "PASSPORT-CH-8819201",
-      "RiskLabel": "Offshore Wealth Manager",
-      "RiskScore": 89.0,
-      "Summary": "Managing Director of Zurich Offshore Wealth Advisory. Expert in multi-jurisdictional shell company structuring and Swiss nominee directorships.",
-      "Aliases": ["V. Moreau", "Victor J. Moreau"],
-      "Tags": ["Offshore Structuring", "Swiss Banker", "Nominee Director"],
-      "Claims": [
-        {
-          "Id": "CLM-BANK-003A",
-          "Title": "Nominee Structure Management",
-          "SourceType": "Transfer Pricing Audit",
-          "SourceDocumentTitle": "Federal Tax Administration Transfer Pricing Audit Audit Findings - Luapula Cobalt",
-          "Date": "2024-01-12",
-          "PageAndParagraph": "Page 12, Para 6",
-          "DirectQuote": "Wealth manager established layered corporate entities in Panama and Switzerland to mask beneficial ownership.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://www.estv.admin.ch/audit/2024-881#p12"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Geneva Commodity Trade SA",
-          "RelationshipType": "Managing Director",
-          "Context": "Corporate service provider and administrator",
-          "SourceReference": "DOC-2024-TP-SWISS",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2016-03-20"
-        },
-        {
-          "TargetEntityName": "Helios Trust Panama SA",
-          "RelationshipType": "Trustee",
-          "Context": "Protector of Panamanian asset holding trust",
-          "SourceReference": "DOC-2024-TP-SWISS",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2017-01-15"
         }
       ]
     },
@@ -569,7 +693,7 @@
           "SourceDocumentTitle": "High Court Criminal Division Conviction Judgment - State v. Derrick Sipalo",
           "Date": "2022-10-29",
           "PageAndParagraph": "Page 18, Para 2",
-          "DirectQuote": "Accused is sentenced to 7 years imprisonment with hard labour for corrupt transactions contrary to Section 19 of the Anti-Corruption Act.",
+          "DirectQuote": "Accused sentenced to 7 years imprisonment with hard labour for corrupt transactions.",
           "ReliabilityTier": "Tier 1 (Official Record)",
           "VerificationStatus": "Verified & Corroborated",
           "SourceUrl": "https://zambialii.org/judgments/criminal-division/2022/412#p18"
@@ -584,82 +708,6 @@
           "PercentageShares": null,
           "ShareClass": "",
           "AcquisitionDate": "2021-02-14"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-CONVICT-002",
-      "Name": "Ignatius Mwale",
-      "EntityType": "Person",
-      "Category": "Court Convictions",
-      "Jurisdiction": "Zambia",
-      "PrimaryIdentifier": "NRC-662910/11/1",
-      "RiskLabel": "Convicted Emerald Smuggler",
-      "RiskScore": 93.0,
-      "Summary": "Convicted mineral dealer sentenced for illegal possession, tax evasion, and smuggling $18M worth of high-grade emeralds to South Asian markets.",
-      "Aliases": ["Iggy Mwale", "Ignatius K. Mwale"],
-      "Tags": ["Convicted", "Emerald Smuggling", "Tax Evasion", "Illicit Mining"],
-      "Claims": [
-        {
-          "Id": "CLM-CONVICT-002A",
-          "Title": "Emerald Smuggling Sentence",
-          "SourceType": "Criminal Conviction",
-          "SourceDocumentTitle": "High Court Criminal Division Conviction Judgment - State v. Derrick Sipalo",
-          "Date": "2022-10-29",
-          "PageAndParagraph": "Page 25, Para 7",
-          "DirectQuote": "Convicted of un-customed mineral export and tax evasion under Section 140 of the Customs and Excise Act.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://zambialii.org/judgments/criminal-division/2022/412#p25"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Solwezi Emerald Concessions Ltd",
-          "RelationshipType": "Illicit Off-Taker",
-          "Context": "Purchased rough uncut stones off-ledger",
-          "SourceReference": "DOC-2022-HC-CONVICT",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2020-08-20"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-CONVICT-003",
-      "Name": "Siyanga Banda",
-      "EntityType": "Person",
-      "Category": "Court Convictions",
-      "Jurisdiction": "Zambia",
-      "PrimaryIdentifier": "NRC-330192/11/1",
-      "RiskLabel": "Convicted Customs Fraudster",
-      "RiskScore": 90.0,
-      "Summary": "Customs broker convicted of creating forged bills of entry, false valuation certificates, and defrauding revenue authorities of $6.2M in import duties.",
-      "Aliases": ["Siyanga P. Banda"],
-      "Tags": ["Convicted", "Customs Evasion", "Forgery"],
-      "Claims": [
-        {
-          "Id": "CLM-CONVICT-003A",
-          "Title": "Customs Forgery Conviction",
-          "SourceType": "Criminal Conviction",
-          "SourceDocumentTitle": "High Court Criminal Division Conviction Judgment - State v. Derrick Sipalo",
-          "Date": "2022-10-29",
-          "PageAndParagraph": "Page 30, Para 4",
-          "DirectQuote": "Sentenced to 5 years for uttering false documents and conspiracy to defraud the public revenue.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://zambialii.org/judgments/criminal-division/2022/412#p30"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Zambezi Logistics SARL",
-          "RelationshipType": "Customs Clearing Agent",
-          "Context": "Forged export clearance manifests",
-          "SourceReference": "DOC-2024-ZRA-902",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2021-05-12"
         }
       ]
     },
@@ -683,7 +731,7 @@
           "SourceDocumentTitle": "Drug Enforcement Commission Interdiction & Syndicate Indictment Report",
           "Date": "2023-09-04",
           "PageAndParagraph": "Page 8, Para 3",
-          "DirectQuote": "Identified as principal organizer behind armed interception of 12 copper concentrate trucks along the Solwezi-Chingola highway.",
+          "DirectQuote": "Identified as principal organizer behind armed interception of 12 copper concentrate trucks.",
           "ReliabilityTier": "Tier 1 (Official Record)",
           "VerificationStatus": "Verified & Corroborated",
           "SourceUrl": "https://www.dec.gov.zm/indictments/2023-049#p8"
@@ -691,56 +739,9 @@
       ],
       "Relationships": [
         {
-          "TargetEntityName": "Copperbelt Transit Syndicate",
-          "RelationshipType": "Commander",
-          "Context": "Ringleader of armed hijacking squad",
-          "SourceReference": "DOC-2023-DEC-NARCO",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2019-03-10"
-        },
-        {
           "TargetEntityName": "Tariq \"Viper\" Al-Hassan",
           "RelationshipType": "Illicit Minerals Fencer",
           "Context": "Sold stolen copper and gold bullion to international fencing ring",
-          "SourceReference": "DOC-2023-DEC-NARCO",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2021-01-18"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-GANG-002",
-      "Name": "Tariq \"Viper\" Al-Hassan",
-      "EntityType": "Person",
-      "Category": "Gangs & Cartels",
-      "Jurisdiction": "South Africa",
-      "PrimaryIdentifier": "INTERPOL-RED-2023-88",
-      "RiskLabel": "Transnational Cartel Boss",
-      "RiskScore": 97.0,
-      "Summary": "Head of transnational gold and mineral smuggling cartel. Operates clandestine processing facilities in Johannesburg and Dubai.",
-      "Aliases": ["Tariq Al-Hassan", "The Viper"],
-      "Tags": ["Transnational Cartel", "Gold Smuggling", "Interpol Red Notice"],
-      "Claims": [
-        {
-          "Id": "CLM-GANG-002A",
-          "Title": "Interpol Red Notice & Gold Cartel Indictment",
-          "SourceType": "Law Enforcement Indictment",
-          "SourceDocumentTitle": "Drug Enforcement Commission Interdiction & Syndicate Indictment Report",
-          "Date": "2023-09-04",
-          "PageAndParagraph": "Page 14, Para 1",
-          "DirectQuote": "Target of international arrest warrant for laundering $85M in illicit gold bullion shipments.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://www.dec.gov.zm/indictments/2023-049#p14"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Jakarai \"Sledge\" Mbewe",
-          "RelationshipType": "Cartel Supplier",
-          "Context": "Received stolen mineral ore shipments",
           "SourceReference": "DOC-2023-DEC-NARCO",
           "PercentageShares": null,
           "ShareClass": "",
@@ -776,217 +777,9 @@
       ],
       "Relationships": [
         {
-          "TargetEntityName": "Chanda \"Kaiser\" Chilufya",
-          "RelationshipType": "Regional Distribution Agent",
-          "Context": "Coordinated regional logistics and transit warehousing",
-          "SourceReference": "DOC-2023-DEC-NARCO",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2020-11-12"
-        },
-        {
           "TargetEntityName": "USDT Mixing Contract (0x3f91...b420)",
           "RelationshipType": "Proceeds Beneficiary",
           "Context": "Laundered narcotics proceeds via decentralized crypto mixers",
-          "SourceReference": "DOC-2023-DEC-NARCO",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2022-03-01"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-DRUG-002",
-      "Name": "Chanda \"Kaiser\" Chilufya",
-      "EntityType": "Person",
-      "Category": "Drug Trafficking",
-      "Jurisdiction": "Zambia",
-      "PrimaryIdentifier": "NRC-882019/11/1",
-      "RiskLabel": "Narcotics Distributor",
-      "RiskScore": 92.0,
-      "Summary": "Sub-Saharan precursor chemical and narcotics distributor. Managed warehousing and clearing for international drug trafficking syndicates.",
-      "Aliases": ["Kaiser Chilufya", "Kaiser"],
-      "Tags": ["Drug Trafficking", "Precursor Smuggling", "DEC Target"],
-      "Claims": [
-        {
-          "Id": "CLM-DRUG-002A",
-          "Title": "Precursor Chemical Storage Warehouse Raid",
-          "SourceType": "Law Enforcement Indictment",
-          "SourceDocumentTitle": "Drug Enforcement Commission Interdiction & Syndicate Indictment Report",
-          "Date": "2023-09-04",
-          "PageAndParagraph": "Page 22, Para 2",
-          "DirectQuote": "Raid on Industrial Area warehouse uncovered 1.2 metric tons of ephedrine precursor compound.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://www.dec.gov.zm/indictments/2023-049#p22"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Mateo \"El Guero\" Delgado",
-          "RelationshipType": "Regional Logistics Coordinator",
-          "Context": "Clearing and warehousing for contraband containers",
-          "SourceReference": "DOC-2023-DEC-NARCO",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2020-11-12"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-PEP-003",
-      "Name": "Hon. Natasha Phiri",
-      "EntityType": "Person",
-      "Category": "PEP",
-      "Jurisdiction": "Zambia",
-      "PrimaryIdentifier": "NRC-449102/11/1",
-      "RiskLabel": "Verified PEP",
-      "RiskScore": 90.0,
-      "Summary": "Deputy Minister of Commerce & Trade. Flagged for failing to declare multi-million dollar real estate holdings in Panama and London.",
-      "Aliases": ["Natasha Phiri", "Hon. N. Phiri"],
-      "Tags": ["PEP", "Deputy Minister", "Offshore Assets", "Undisclosed Real Estate"],
-      "Claims": [
-        {
-          "Id": "CLM-PEP-003A",
-          "Title": "Omission of Foreign Real Estate Assets",
-          "SourceType": "Asset Declaration Gazette",
-          "SourceDocumentTitle": "Gazetted Declaration of Assets and Liabilities for Public Officers",
-          "Date": "2023-01-30",
-          "PageAndParagraph": "Page 22, Para 5",
-          "DirectQuote": "Declarant omitted foreign property investments held through Panamanian trust structure.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://www.acc.gov.zm/declarations/2023#p22"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Helios Trust Panama SA",
-          "RelationshipType": "Beneficial Owner",
-          "Context": "100% beneficiary of Panamanian real estate trust",
-          "SourceReference": "DOC-2023-ACC-GAZ",
-          "PercentageShares": 100.0,
-          "ShareClass": "Beneficiary",
-          "AcquisitionDate": "2018-04-12"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-CORP-008",
-      "Name": "Helios Trust Panama SA",
-      "EntityType": "Company",
-      "Category": "Beneficial Ownership",
-      "Jurisdiction": "Panama",
-      "PrimaryIdentifier": "PAN-REG-991204",
-      "RiskLabel": "Offshore Trust Vehicle",
-      "RiskScore": 87.0,
-      "Summary": "Panamanian asset protection trust holding high-end residential real estate and offshore bank accounts for politically exposed persons.",
-      "Aliases": ["Helios Trust", "Helios Panama"],
-      "Tags": ["Panama Trust", "Offshore Real Estate", "PEP Asset Vehicle"],
-      "Claims": [
-        {
-          "Id": "CLM-CORP-008A",
-          "Title": "Panamanian Trust Incorporation Record",
-          "SourceType": "Corporate Registry",
-          "SourceDocumentTitle": "Gazetted Declaration of Assets and Liabilities for Public Officers",
-          "Date": "2023-01-30",
-          "PageAndParagraph": "Page 25, Para 1",
-          "DirectQuote": "Panamanian foundation holding title to 4 residential properties in London and Dubai.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://www.acc.gov.zm/declarations/2023#p25"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Hon. Natasha Phiri",
-          "RelationshipType": "Settlor / Beneficiary",
-          "Context": "Trust created for Natasha Phiri",
-          "SourceReference": "DOC-2023-ACC-GAZ",
-          "PercentageShares": 100.0,
-          "ShareClass": "Beneficiary",
-          "AcquisitionDate": "2018-04-12"
-        },
-        {
-          "TargetEntityName": "Victor Moreau",
-          "RelationshipType": "Trustee",
-          "Context": "Swiss corporate trustee",
-          "SourceReference": "DOC-2024-TP-SWISS",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2017-01-15"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-CORP-009",
-      "Name": "Solwezi Emerald Concessions Ltd",
-      "EntityType": "Company",
-      "Category": "Beneficial Ownership",
-      "Jurisdiction": "Zambia",
-      "PrimaryIdentifier": "PACRA-40019283",
-      "RiskLabel": "Gemstone Undervaluation",
-      "RiskScore": 84.0,
-      "Summary": "Emerald mining operator investigated for selling high-grade gemstones to off-ledger buyers at 15% of market value to evade royalty payments.",
-      "Aliases": ["Solwezi Emeralds", "SEC Mining"],
-      "Tags": ["Gemstone Mining", "Royalty Evasion", "Off-Ledger Exports"],
-      "Claims": [
-        {
-          "Id": "CLM-CORP-009A",
-          "Title": "Gemstone Royalty Evasion Finding",
-          "SourceType": "Audit Disclosure",
-          "SourceDocumentTitle": "Extractive Industries Transparency Initiative (EITI) Beneficial Ownership Disclosure",
-          "Date": "2023-11-20",
-          "PageAndParagraph": "Page 34, Para 3",
-          "DirectQuote": "Under-declaration of gem weight and clarity grade resulted in $14M mineral royalty shortfall.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://eiti.org/countries/zambia/reports/2023#p34"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Ignatius Mwale",
-          "RelationshipType": "Off-Ledger Buyer",
-          "Context": "Purchased rough uncut stones without export permits",
-          "SourceReference": "DOC-2022-HC-CONVICT",
-          "PercentageShares": null,
-          "ShareClass": "",
-          "AcquisitionDate": "2020-08-20"
-        }
-      ]
-    },
-    {
-      "Id": "ENT-CRYPTO-002",
-      "Name": "USDT Mixing Contract (0x3f91...b420)",
-      "EntityType": "Organization",
-      "Category": "Crypto Tracing",
-      "Jurisdiction": "Global / Blockchain",
-      "PrimaryIdentifier": "ETH-0x3f910482019482b420",
-      "RiskLabel": "Narcotics Proceeds Mixer",
-      "RiskScore": 94.0,
-      "Summary": "Tether (USDT) smart contract mixer used by regional narcotics cartels to obfuscate trade-based money laundering disbursements.",
-      "Aliases": ["USDT Mixer 3F9", "Smart Contract 0x3f91"],
-      "Tags": ["Crypto Mixer", "USDT Tracing", "Narcotics Laundering"],
-      "Claims": [
-        {
-          "Id": "CLM-CRYPTO-002A",
-          "Title": "Blockchain Laundering Trace",
-          "SourceType": "Law Enforcement Indictment",
-          "SourceDocumentTitle": "Drug Enforcement Commission Interdiction & Syndicate Indictment Report",
-          "Date": "2023-09-04",
-          "PageAndParagraph": "Page 28, Para 4",
-          "DirectQuote": "Mixer processed over $32M in USDT linked to Latin American drug cartels.",
-          "ReliabilityTier": "Tier 1 (Official Record)",
-          "VerificationStatus": "Verified & Corroborated",
-          "SourceUrl": "https://www.dec.gov.zm/indictments/2023-049#p28"
-        }
-      ],
-      "Relationships": [
-        {
-          "TargetEntityName": "Mateo \"El Guero\" Delgado",
-          "RelationshipType": "Depositor",
-          "Context": "Sent drug proceeds for obfuscation",
           "SourceReference": "DOC-2023-DEC-NARCO",
           "PercentageShares": null,
           "ShareClass": "",
@@ -1193,7 +986,7 @@
         "Heading": "Primary Source Evidence Tiering",
         "Body": "All records in the AFRI-INTELLIGENCE catalog must be anchored to verifiable, public-domain primary source documents. We classify evidence into four reliability tiers:",
         "Bullets": [
-          "Tier 1: Official Public Records (Gazettes, High Court Judgments, PACRA corporate filings, EITI disclosures, Transfer Pricing Audits).",
+          "Tier 1: Official Public Records (Gazettes, High Court Judgments, PACRA corporate filings, EITI disclosures, ZESCO Audit Bulletins, Transfer Pricing Audits).",
           "Tier 2: Regulatory Audits & Parliamentary Committee Reports.",
           "Tier 3: Investigative Journalism with Multi-Source Corroboration.",
           "Tier 4: Unverified Crowdsourced or Analyst Submissions (Subject to Review)."
