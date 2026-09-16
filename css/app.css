@@ -573,12 +573,18 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .entity-tag {
-    background: #0b1220;
-    border: 1px solid #1f2937;
-    color: #cbd5e1;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #334155;
     border-radius: 999px;
     padding: 0.28rem 0.65rem;
     font-size: 0.74rem;
+}
+
+[data-theme="dark"] .entity-tag {
+    background: #0b1220;
+    border-color: #1f2937;
+    color: #cbd5e1;
 }
 
 .evidence-card {
@@ -720,6 +726,12 @@ fluent-option:hover, fluent-menu-item:hover {
 
 .dossier-badge {
     margin-bottom: 0.75rem;
+    background: #f1f5f9;
+    border: 1px solid #bae6fd;
+    color: #0284c7;
+}
+
+[data-theme="dark"] .dossier-badge {
     background: #1e293b;
     color: #7dd3fc;
 }
@@ -896,11 +908,16 @@ fluent-option:hover, fluent-menu-item:hover {
     top: 1rem;
     display: grid;
     gap: 0.85rem;
-    background: linear-gradient(180deg, rgba(8, 17, 31, 0.98), rgba(15, 23, 42, 0.98));
-    border: 1px solid #1f2937;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
     border-radius: 18px;
     padding: 1rem;
-    box-shadow: 0 24px 42px -32px rgba(15, 23, 42, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .graph-inspector {
+    background: linear-gradient(180deg, rgba(8, 17, 31, 0.98), rgba(15, 23, 42, 0.98));
+    border-color: #1f2937;
 }
 
 .inspector-topline {
@@ -911,7 +928,7 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .inspector-kicker {
-    color: #7dd3fc;
+    color: #0284c7;
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -919,30 +936,33 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .inspector-status {
-    color: #94a3b8;
+    color: #64748b;
     font-size: 0.8rem;
     text-align: right;
 }
 
 .inspector-empty {
-    color: #dbeafe;
+    color: #475569;
     line-height: 1.7;
     padding: 1rem;
     border-radius: 14px;
-    border: 1px dashed rgba(125, 211, 252, 0.2);
-    background: rgba(15, 23, 42, 0.65);
+    border: 1px dashed #cbd5e1;
+    background: #f8fafc;
 }
 
 .inspector-card {
-    background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.05), transparent 26%),
-        linear-gradient(180deg, rgba(11, 18, 32, 0.98), rgba(15, 23, 42, 0.98));
-    border: 1px solid #1f2937;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 14px;
     padding: 0.95rem;
     display: grid;
     gap: 0.65rem;
-    box-shadow: 0 18px 34px -30px rgba(2, 132, 199, 0.45);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="dark"] .inspector-card {
+    background: linear-gradient(180deg, rgba(11, 18, 32, 0.98), rgba(15, 23, 42, 0.98));
+    border-color: #1f2937;
 }
 
 .inspector-title {
@@ -957,7 +977,7 @@ fluent-option:hover, fluent-menu-item:hover {
 .inspector-summary,
 .inspector-document-link,
 .inspector-evidence-ref {
-    color: #94a3b8;
+    color: #475569;
     line-height: 1.65;
 }
 
@@ -966,7 +986,7 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .inspector-summary {
-    color: #dbeafe;
+    color: #334155;
     font-size: 0.92rem;
 }
 
@@ -980,20 +1000,26 @@ fluent-option:hover, fluent-menu-item:hover {
 
 .inspector-badge {
     font-size: 0.74rem;
-    color: #cbd5e1;
-    background: #111827;
-    border: 1px solid #1f2937;
+    color: #334155;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
     border-radius: 999px;
     padding: 0.22rem 0.6rem;
 }
 
+[data-theme="dark"] .inspector-badge {
+    color: #cbd5e1;
+    background: #111827;
+    border-color: #1f2937;
+}
+
 .inspector-badge-accent {
-    color: #7dd3fc;
-    border-color: rgba(56, 189, 248, 0.34);
+    color: #0284c7;
+    border-color: rgba(2, 132, 199, 0.34);
 }
 
 .inspector-section-title {
-    color: #7dd3fc;
+    color: #0284c7;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1008,15 +1034,20 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .inspector-entity-grid div {
-    background: rgba(15, 23, 42, 0.9);
-    border: 1px solid #1f2937;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 0.65rem;
 }
 
+[data-theme="dark"] .inspector-entity-grid div {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: #1f2937;
+}
+
 .inspector-entity-grid span {
     display: block;
-    color: #94a3b8;
+    color: #64748b;
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1028,9 +1059,12 @@ fluent-option:hover, fluent-menu-item:hover {
 }
 
 .inspector-evidence-quote {
-    color: #e2e8f0;
+    color: #334155;
     font-style: italic;
     line-height: 1.65;
+    padding-left: 0.8rem;
+    border-left: 3px solid #e11d48;
+}
     padding-left: 0.8rem;
     border-left: 3px solid #f43f5e;
 }
@@ -1130,11 +1164,16 @@ fluent-option:hover, fluent-menu-item:hover {
     top: 1rem;
     display: grid;
     gap: 0.85rem;
-    background: linear-gradient(180deg, rgba(8, 17, 31, 0.98), rgba(15, 23, 42, 0.98));
-    border: 1px solid #1f2937;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
     border-radius: 18px;
     padding: 1rem;
-    box-shadow: 0 24px 42px -32px rgba(15, 23, 42, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .ownership-graph-inspector {
+    background: linear-gradient(180deg, rgba(8, 17, 31, 0.98), rgba(15, 23, 42, 0.98));
+    border-color: #1f2937;
 }
 
 .ownership-graph-header {
